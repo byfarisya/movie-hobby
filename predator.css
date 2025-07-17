@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+/* BACKGROUND */
+.background {
+    min-height: 100vh;
+    background-image: url('predator bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo {
+    height: 100px; /* ikut gambar besar */
+    position: relative; /* Untuk kawal posisi tanpa gerakkan elemen lain */
+    left: 0; /* Ubah ikut keperluan */
+    top: 0;
+	width: auto;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    color: #ddd;
+}
+
+/* Hamburger dropdown */
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    height: 24px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-width: 200px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.hamburger-menu:hover .dropdown-content {
+    display: block;
+}
+
+/* MAIN CONTENT */
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* SYNOPSIS */
+.synopsis-box {
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    border-radius: 10px;
+    margin-left: -280px; /* Ubah ikut keperluan */
+    margin-top: -80px;
+    position: relative;
+    left: 68px; /* bergerak ke kanan 80px dari margin-left asal */
+}
+
+/* Betulkan komen margin-left & left supaya jelas */
+
+.synopsis-box strong {
+    font-size: 16px;
+}
+
+/* POSTER FLIP */
+.poster-container {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    margin-left: 30px;
+    position: relative;
+    left: -90px; /* gerak ke kiri 90px */
+    margin-top: -40px;
+}
+
+.poster-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.poster-container:hover .poster-inner {
+    transform: rotateY(180deg);
+}
+
+.poster-front,
+.poster-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.poster-front img,
+.poster-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.poster-back {
+    transform: rotateY(180deg);
+}
+
+/* KARAKTER LEFT */
+.karakter-left {
+    position: absolute;
+    left: 760px; /* Ubah nilai untuk gerakkan ke kiri atau kanan */
+    top: 160px;
+    z-index: 10; /* Supaya sentiasa atas */
+}
+
+.karakter-left img {
+    height: 300px;
+    width: auto;
+}
+
+/* BOTTOM SECTION */
+.bottom-section {
+    display: flex;
+    justify-content: space-between; /* susun kiri, tengah, kanan */
+    padding: 0 40px; /* ruang kiri dan kanan */
+    margin-top: 50px;
+    gap: 100px; /* jarak antara kotak, boleh guna gap sebab parent flex */
+}
+
+/* FLIP BOXES */
+.flip-box {
+    background-color: transparent;
+    width: 220px;    /* besarkan dari 180px */
+    height: 140px;   /* naikkan dari 120px */
+    perspective: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* buang gap dari sini sebab bukan flex container */
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-box-front img,
+.flip-box-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.flip-box-back {
+    transform: rotateY(180deg);
+}
+
+/* VIDEO */
+.bottom-section video {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}

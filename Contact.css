@@ -1,0 +1,113 @@
+/* Full page setup */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#main-container {
+    background-image: url('bg contact.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: -10px; /* naikkan sikit */
+    left: 20px;
+    width: 120px; /* kecilkan logo */
+}
+
+/* Navigation */
+nav {
+    position: absolute;
+    top: 30px; /* align dengan logo */
+    right: 80px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* buang garis bawah */
+    margin-left: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+nav a:hover {
+    color: #ccc; /* tukar warna bila hover */
+}
+
+nav a:active {
+    color: #aaa; /* warna bila ditekan */
+}
+
+/* Hamburger */
+.hamburger {
+    position: absolute;
+    top: 25px; /* naikkan sikit */
+    right: 35px;
+    cursor: pointer;
+}
+
+.hamburger img {
+    width: 25px; /* kecilkan sikit */
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px; /* ikut hamburger baru */
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown li {
+    margin: 8px 0;
+}
+
+.dropdown a {
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.dropdown a:hover {
+    color: #ccc;
+}
+
+/* Contact box */
+.contact-box {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background-color: rgba(255, 255, 255, 0.5);;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contact-box img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.contact-box p:first-child {
+    text-align: center;
+    font-weight: bold;
+}

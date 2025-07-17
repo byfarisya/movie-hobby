@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About me</title>
+  <link href="About me.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="page-container">
+
+	<div class="topbar">
+      <div class="logo-box">
+        <img src="MOVIES LOGO.png" alt="MOVIES Logo" class="logo" />
+      </div>
+
+      <div class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="About me.html">ABOUT ME</a>
+        <a href="Contact.html">CONTACT</a>
+        <div class="menu-icon">
+          <img src="HAMBURGER.png" alt="Menu" />
+        </div>
+      </div>
+
+      <!-- DROPDOWN MENU -->
+      <div class="dropdown-menu">
+        <a href="10 things.html">10 Things I Hate About You</a>
+        <a href="Jurassic.html">Jurassic World</a>
+        <a href="predator.html">The Predator</a>
+        <a href="lizzie.html">The Lizzie McGuire Movie</a>
+        <a href="shrek.html">Shrek</a>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="about-section">
+      <img src="Pfp.jpg" alt="Guy in Red" class="about-img" />
+      <div class="about-text">
+        <h3>ABOUT ME</h3>
+        <p>
+          Hi there!<br><br>
+          I'm NUR FARAH FARISYA, a huge movie lover who enjoys everything from action-packed thrillers to heartwarming rom-coms. This website is where I share my all-time favorite movies, personal reviews, and the films that made me laugh, cry, or sit on the edge of my seat.<br><br>
+          I hope you find something here to enjoy.<br>
+          Welcome to my movie world!
+        </p>
+      </div>
+    </div>
+
+    <!-- GIF CAROUSEL -->
+    <div class="gif-section">
+      <h2>MY TOP PICKS!</h2>
+      <div class="carousel">
+        <span class="arrow" onclick="prevGif()">&#10094;</span>
+        <a href="10 things.html" id="gif-link">
+          <img src="pink-heart gif.gif" id="gif" alt="Top Pick GIF" />
+        </a>
+        <span class="arrow" onclick="nextGif()">&#10095;</span>
+      </div>
+    </div>
+
+</div>
+
+<script>
+  const gifs = [
+    { src: "pink-heart gif.gif", link: "10 things.html" },
+    { src: "dino gif.gif", link: "Jurassic.html" },
+    { src: "alien gif.gif", link: "predator.html" },
+    { src: "lizzie gif.gif", link: "lizzie.html" },
+    { src: "shrek.gif", link: "shrek.html" }
+  ];
+
+  let current = 0;
+
+  function updateGif() {
+    const gifEl = document.getElementById("gif");
+    const linkEl = document.getElementById("gif-link");
+    gifEl.src = gifs[current].src;
+    linkEl.href = gifs[current].link;
+  }
+
+  function nextGif() {
+    current = (current + 1) % gifs.length;
+    updateGif();
+  }
+
+  function prevGif() {
+    current = (current - 1 + gifs.length) % gifs.length;
+    updateGif();
+  }
+
+  window.onload = updateGif;
+
+  const menuIcon = document.querySelector('.menu-icon img');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  menuIcon.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<link href="Contact.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="main-container">
+
+    <!-- Logo "Movies" -->
+    <img src="MOVIES LOGO.png" alt="Movies Logo" class="logo">
+
+    <!-- Menu navigasi -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="About me.html">ABOUT ME</a>
+        <a href="Contact.html">CONTACT</a>
+    </nav>
+
+    <!-- Hamburger menu -->
+    <div class="hamburger" onclick="toggleDropdown()">
+        <img src="HAMBURGER.png" alt="Menu">
+    </div>
+
+    <!-- Dropdown movie list -->
+    <div id="dropdown" class="dropdown">
+        <ul>
+            <li><a href="10 things.html">10 Things I Hate About You</a></li>
+            <li><a href="Jurassic.html">Jurassic World</a></li>
+            <li><a href="predator.html">The Predator</a></li>
+            <li><a href="lizzie.html">The Lizzie McGuire Movie</a></li>
+            <li><a href="shrek.html">Shrek</a></li>
+        </ul>
+    </div>
+
+    <!-- Kotak Contact Me -->
+    <div class="contact-box">
+        <p>CONTACT ME</p>
+        <p>
+            <img src="insta logo.png" alt="Instagram">
+            @farisyafazli
+        </p>
+        <p>
+            <img src="email.png" alt="Email">
+            farahfarisya16@gmail.com
+        </p>
+    </div>
+
+</div>
+
+<script>
+function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
